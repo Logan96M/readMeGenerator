@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="./app.js"></script> -->
+    <!-- <script src="./gitHubUsername.js"></script> -->
+</head>
+
+<body>
+
+    <div id="emailDiv">k</div>
+    <h1>As a developer in (year input), </h1>
+    <h1>I want a (nameOfProject input), </h1>
+    <!-- ex. README generator -->
+    <h1>so that I can (whatDoesSingular input)</h1>
+    <!-- ex. put together a good README for a new project -->
+
+    </div>
+
+    <script>
+        // gitUser
+        fetch( "https://api.github.com/users/LoganM96")
+.then((r) => r.json())
+.then((gitHubUser) => {
+
+
+
+  console.log(gitHubUser);
+  let emailElem = document.getElementById(
+    'emailDiv');
+    emailElem.innerHTML = `
+    <img class="card-img-top" 
+    src="${gitHubUser.avatar_url}" 
+    alt="${gitHubUser.login}"> 
+    <div class="card-body">
+    <h5 class="card-title">Email: ${gitHubUser.email}</h5>
+
+
+
+    </ul>
+ </div>
+    `
+
+});
+    </script>
+
+</body>
+
+</html>
